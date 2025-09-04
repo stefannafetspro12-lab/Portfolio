@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stefan Stanušić — Portfolio</title>
+  <meta name="description" content="Portfolio of Stefan Stanušić: Video Editor and Student at the Faculty of Electrical Engineering in Belgrade." />
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#11141a; --muted:#8a94a7; --text:#e6e9ef; --brand:#66d9e8; --brand-2:#a78bfa; --ring:#2dd4bf;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background:linear-gradient(180deg, #0b0d10 0%, #0e1116 100%);}    
+    a{color:var(--brand); text-decoration:none}
+
+    .container{width:min(1100px, 92%); margin-inline:auto}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(11,13,16,.7); border-bottom:1px solid rgba(255,255,255,.06); z-index:10}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .nav a.brand{font-weight:700; letter-spacing:.4px}
+    .nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    .nav a{padding:8px 12px; border-radius:12px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .menu-btn{display:none; border:1px solid rgba(255,255,255,.12); background:transparent; color:var(--text); padding:8px 10px; border-radius:12px}
+
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; padding:64px 0 24px}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(102,217,232,.1); color:var(--brand); border:1px solid rgba(102,217,232,.25); font-size:.9rem}
+    .title{font-size:clamp(30px, 5vw, 46px); line-height:1.15; margin:14px 0}
+    .subtitle{color:var(--muted); font-size:1.05rem; max-width:60ch}
+    .cta{display:flex; gap:12px; margin:22px 0 0}
+    .btn{border:none; padding:12px 16px; border-radius:14px; font-weight:600; cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#0b0d10; box-shadow:var(--shadow)}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.12); color:var(--text)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:18px; box-shadow:var(--shadow)}
+
+     .photo-container {
+      position: relative;
+      display: flex;
+      padding: 0%;
+      align-items: center;
+      justify-content: center;
+      
+      
+    }
+    .photo-container img {
+      
+      width: 92%;
+      margin-top: 10px;
+      padding-bottom: 0px;
+      margin-right: 50px;
+      
+      
+      max-width: 320px;
+      filter: drop-shadow(0 0 25px var(--brand)) drop-shadow(0 0 45px var(--brand-2));
+    }
+
+
+    section{padding:56px 0}
+    .section-title{font-size:1.6rem; margin:0 0 22px}
+
+    .about{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+
+    .project-link { text-decoration: none; color: inherit; }
+    .project{display:flex; flex-direction:column; gap:12px; cursor:pointer; transition:transform .2s ease}
+    .project:hover{transform:translateY(-6px)}
+    .meta{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:.8rem; padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.12); color:var(--muted)}
+
+    .skills{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px}
+    .skill{padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+
+    .contact-icons {display:flex; justify-content:center; gap:48px; align-items:center;}
+    .contact-icons a svg {width:64px; height:64px; transition:0.3s ease;}
+    .contact-icons a:hover svg.gmail path {fill:#EA4335;}
+    .contact-icons a:hover svg.instagram path {fill:url(#ig-gradient);}
+
+    footer{padding:36px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .skills{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav ul{display:none}
+      .menu-btn{display:inline-flex}
+      .skills{grid-template-columns:1fr}
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f7f7fb; --card:#fff; --text:#0b0d10; --muted:#495163}
+      body{background:linear-gradient(180deg, #f7f7fb 0%, #eef1f7 100%)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">Stefan.dev</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="chip">👋 Hello!</span>
+        <h1 class="title">I'm <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Stefan Stanušić</span>, a video editor.</h1>
+        <p class="subtitle">I work in <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">DaVinci Resolve</span> and I am just starting my career as a short form content video editor. I am passionate about supporting others in bringing out the full potential of their content, showcase my creativity, and expand my portfolio with various projects.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="card photo-container">
+        <img src="BAKI4965.png" alt="Photo of Stefan Stanušić">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about">
+        <div class="card">
+          <p>My name is <strong>Stefan Stanušić</strong>. I am a video editor with some experience in editing, though not professionally yet. I am currently a student at the <strong>Faculty of Electrical Engineering in Belgrade</strong>.</p>
+        </div>
+        <div class="card">
+          <p><strong>Highlights:</strong></p>
+          <ul class="small">
+            <li>Hands-on editing experience on personal projects</li>
+            <li>Ability to adapt and to transform a client’s vision into compelling content</li>
+            <li>Combining technical studies with creative skills</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Project</h2>
+      <a href="project1.html" class="project-link">
+        <article class="project card">
+          <img src="baki2222.png" alt="Project thumbnail">
+          <h3 style="margin:0">Editing Showcase</h3>
+          <p class="small">Click to see before/after comparison and timeline preview.</p>
+          <div class="meta">
+            <span class="tag">Video Editing</span><span class="tag">DaVinci Resolve</span>
+          </div>
+        </article>
+      </a>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div class="skill">Video Editing</div>
+        <div class="skill">DaVinci Resolve</div>
+        <div class="skill">Motion Graphics</div>
+        <div class="skill">Short Form Content</div>
+        <div class="skill">3D Objects</div>
+        <div class="skill">Attention to detail</div>
+        <div class="skill">Organization</div>
+        <div class="skill">Technical background from engineering studies</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card contact-icons">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stefanstanusic115@gmail.com" target="_blank" aria-label="Email">
+          <svg class="gmail" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 4c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4z"/>
+            <path fill="#fff" d="M34 15H14c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V17c0-1.1-.9-2-2-2zm-2 4-8 5-8-5v-2l8 5 8-5v2z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/stanusic35" target="_blank" aria-label="Instagram">
+          <svg class="instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="64" height="64">
+            <defs>
+              <linearGradient id="ig-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#feda75" />
+                <stop offset="25%" stop-color="#fa7e1e" />
+                <stop offset="50%" stop-color="#d62976" />
+                <stop offset="75%" stop-color="#962fbf" />
+                <stop offset="100%" stop-color="#4f5bd5" />
+              </linearGradient>
+            </defs>
+            <path fill="#fff" d="M34 6H14a8 8 0 0 0-8 8v20a8 8 0 0 0 8 8h20a8 8 0 0 0 8-8V14a8 8 0 0 0-8-8zM24 34a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm10-18a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Stefan Stanušić. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      const nav = document.querySelector('.nav ul');
+      if(!nav) return;
+      const shown = getComputedStyle(nav).display !== 'none';
+      nav.style.display = shown ? 'none' : 'flex';
+      if(!shown){ nav.style.flexDirection = 'column'; nav.style.gap = '8px'; nav.style.paddingTop = '10px'; }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Showcase — Stefan Stanušić</title>
+  <meta name="description" content="Before/After editing showcase by Stefan Stanušić in DaVinci Resolve." />
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#11141a; --muted:#8a94a7; --text:#e6e9ef; --brand:#66d9e8; --brand-2:#a78bfa; --ring:#2dd4bf;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:16px/1.6 system-ui, sans-serif; color:var(--text); background:linear-gradient(180deg,#0b0d10,#0e1116);}
+    a{color:var(--brand); text-decoration:none}
+
+    .container{width:min(1100px,92%); margin-inline:auto}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(11,13,16,.7); border-bottom:1px solid rgba(255,255,255,.06); z-index:10}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .nav a.brand{font-weight:700; letter-spacing:.4px}
+    .nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    .nav a{padding:8px 12px; border-radius:12px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+
+    section{padding:56px 0}
+    .section-title{font-size:1.8rem; margin:0 0 22px; text-align:center}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:18px; box-shadow:var(--shadow)}
+
+    .videos{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px}
+    .videos video{width:100%; border-radius:14px; box-shadow:var(--shadow)}
+
+    .timeline{text-align:center; margin-top:40px}
+    .timeline img{max-width:100%; border-radius:14px; box-shadow:var(--shadow)}
+
+    footer{padding:36px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
+
+    @media(max-width:800px){
+      .videos{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="stef1.html">← Back to Portfolio</a>
+      <nav>
+        <ul>
+          <li><a href="stef1.html#projects">Projects</a></li>
+          <li><a href="stef1.html#skills">Skills</a></li>
+          <li><a href="stef1.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1 class="section-title"><span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Editing Showcase</span></h1>
+      <p style="text-align:center; max-width:700px; margin:auto; color:var(--muted)">
+        A side-by-side look at one of my editing projects. The first video shows the unedited version, and the second video showcases the final result after editing in <strong>DaVinci Resolve</strong>. Scroll further to see the editing timeline. Video rights and credits go to Joseph | Video Editing.
+      </p>
+
+      <div class="videos">
+        <div class="card">
+          <h3>Before Editing</h3>
+          <video controls>
+            <source src="before.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card">
+          <h3>After Editing</h3>
+          <video controls >
+            <source src="after.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <h3>Timeline Preview</h3>
+        <div class="card">
+          <img src="timeline.png" alt="Editing timeline in DaVinci Resolve">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Stefan Stanušić. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
